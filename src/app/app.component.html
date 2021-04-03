@@ -6,7 +6,7 @@
           <a mat-list-item href="#about">About</a>
           <a mat-list-item href="#portfolio">Portfolio</a>
           <a mat-list-item href="#pricing">Pricing</a>
-          <a mat-list-item href="#blog">Blog</a>
+          <a mat-list-item href="#blog">Sign Up</a>
           <a mat-list-item href="#contact">Contact</a>
       </mat-nav-list>
       <span class="navigation-spacer"></span>
@@ -24,7 +24,7 @@
           <a mat-list-item href="#about" (click)="snav.toggle()">About</a>
           <a mat-list-item href="#portfolio" (click)="snav.toggle()">Portfolio</a>
           <a mat-list-item href="#pricing" (click)="snav.toggle()">Pricing</a>
-          <a mat-list-item href="#blog" (click)="snav.toggle()">Blog</a>
+          <a mat-list-item href="#blog" (click)="snav.toggle()">Sign Up</a>
           <a mat-list-item href="#contact" (click)="snav.toggle()">Contact</a>
         </mat-nav-list>
       </mat-sidenav>
@@ -32,14 +32,24 @@
       <mat-sidenav-content nglp-scroll (onScroll)="detectScroll($event)">
 
       <app-heading></app-heading>
+
+
       <app-about></app-about>
       <app-portfolio></app-portfolio>
       <app-pricing></app-pricing>
-      <app-blog></app-blog>
-      <app-contact></app-contact>
+<!--       <app-blog></app-blog>
+ -->      <app-contact></app-contact>
 
-      <!-- ======= Footer ======= -->
-  <footer id="footer">
+      
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer" style="width: 102%;
+    margin-left: -8px;margin-top: 2%;">
     <div class="container">
       <h3>Electric Nodes</h3>
       <p>This WebApp helps people to connect with Electrical Vehicle Charging nodes.</p>
@@ -58,12 +68,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-        Designed by <a href="#">Anton Developers</a>
+        Designed by <span >Anton Developers</span>
       </div>
     </div>
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-      </mat-sidenav-content>
-    </mat-sidenav-container>
