@@ -1,7 +1,7 @@
 <mat-toolbar class="navigation-toolbar" [class.navigation-is-mobile]="mobileQuery.matches" [class.mat-elevation-z0]="!isActive" [class.mat-elevation-z8]="isActive" [class.animated-header]="!isActivefadeInDown" [class.fadeInDown]="!isActivefadeInDown" [class.navigation-fixed]="!fixedTolbar">
       <button fxShow="true" fxShow.gt-xs="false" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       <!-- <a class="logo" fxShow="false" fxShow.gt-xs="true" href="#"><img src="assets/img/logo.png"></a> -->
-      <span style="color: #ff6d00">Electric Nodes</span>
+      <span style="color: #ff6d00">Electric Nodes <sup style="font-style: oblique;">dev-0.0.1</sup></span>
       <mat-nav-list class="navigation-list" fxLayout="row" fxShow="false" fxShow.gt-xs="true">
           <a mat-list-item href="#about">About</a>
           <a mat-list-item href="#portfolio">Portfolio</a>
@@ -21,11 +21,11 @@
                    [fixedInViewport]="mobileQuery.matches" (opened)="setToggleOn()" (closed)="setToggleOff()">
         <mat-nav-list>
           <a id="mobilelogo" class="logo" fxShow="true" fxShow.gt-xs="false" href="#"><img src="assets/img/logo.png"></a>
-          <a mat-list-item href="#about">About</a>
-          <a mat-list-item href="#portfolio">Portfolio</a>
-          <a mat-list-item href="#pricing">Pricing</a>
-          <a mat-list-item href="#blog">Blog</a>
-          <a mat-list-item href="#contact">Contact</a>
+          <a mat-list-item href="#about" (click)="snav.toggle()">About</a>
+          <a mat-list-item href="#portfolio" (click)="snav.toggle()">Portfolio</a>
+          <a mat-list-item href="#pricing" (click)="snav.toggle()">Pricing</a>
+          <a mat-list-item href="#blog" (click)="snav.toggle()">Blog</a>
+          <a mat-list-item href="#contact" (click)="snav.toggle()">Contact</a>
         </mat-nav-list>
       </mat-sidenav>
 
