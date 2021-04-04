@@ -14,6 +14,8 @@ import { PricingComponent } from './pricing/pricing.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -26,7 +28,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
     PricingComponent,
     BlogComponent,
     ContactComponent,
-    ContactDialogComponent
+    ContactDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
     FlexLayoutModule,
     DirectivesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   entryComponents: [ ContactDialogComponent ],

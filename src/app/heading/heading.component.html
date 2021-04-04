@@ -1,23 +1,29 @@
-<section id="heading" class="mat-typography" [ngStyle.lt-md]="{'margin-top': '30px', 'margin-bottom': '30px'}" style="margin-top: 12%">
+<section id="heading" class="mat-typography" [ngStyle.lt-md]="{'margin-top': '30px', 'margin-bottom': '30px'}" style="margin-top: 12%;">
 
 <!-- 	<img src="assets/img/electric-cars.jpg">
  -->
 
 
-  <div class="container">	
+  <div class="container">
+
 		<div class="heading-section" fxLayout="column" fxLayoutAlign="center center">
 			     <img mat-card-image src="assets/img/logo_ev.png" style="width: 104px;">
 
     		<div [class.animated]="isHeading" [class.fadeInLeft]="isHeading">
 	        <h1 [ngStyle.xs]="{'font-size': '32px'}" [ngStyle.sm]="{'font-size': '42px'}" style="color: #ff6d00;">Electric Nodes</h1>
 	        </div>
+<!-- 	            <img src="assets/img/nodes-new.png"> 
+ -->
 	        <div [class.animated]="isSubheading" [class.fadeInRight]="isSubheading">
 	        <h2 [ngStyle.xs]="{'font-size': '18px'}" [ngStyle.sm]="{'font-size': '22px'}">World's First Charger sharing WebApp for Electric Vehicles.</h2>
 	        </div>
 	        <div fxLayout="row" [class.animated]="isHeadingBtn" [class.fadeIn]="isHeadingBtn" [class.heading-btn]="isHeadingBtn">
-        		<a class="heading-button-left" mat-flat-button color="accent">Log in</a>
+        		<a class="heading-button-left" mat-flat-button color="accent" style="background-color: #00364d;color: white" >Log in</a>
 		        <a class="heading-button-right" mat-stroked-button color="accent" style="min-width: 144px; color: black">Sign Up</a>
 	    	</div>
+<!-- [routerLink]="'/login'"
+ -->	    	  <!-- <router-outlet></router-outlet> -->
+
 	    </div>
    </div>
 </section>
