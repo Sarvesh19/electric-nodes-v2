@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import {IntroComponent} from './intro/intro.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -12,7 +14,8 @@ const routes: Routes = [
     
      
 
-   //    { path: '', component: HomeComponent, canActivate: [AuthGuard],
+      { path: '', component: IntroComponent },
+      { path: 'signup', component: SignupComponent },
    // children: [
    //    { path: 'create-party', component: CreatePartyComponent },
    //    { path: 'search-party', component: RequestPartyComponent }

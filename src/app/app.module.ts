@@ -16,8 +16,13 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { IntroComponent } from './intro/intro.component';
+import { SignupComponent } from './signup/signup.component';
 
 
+//ng g component intro/intro --module=app.module.ts
+// lsof -i:3000
+//kill -9 "PID"
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { AppRoutingModule } from './app-routing.module';
     BlogComponent,
     ContactComponent,
     ContactDialogComponent,
-    LoginComponent
+    LoginComponent,
+    IntroComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

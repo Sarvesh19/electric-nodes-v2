@@ -3,7 +3,7 @@
       <!-- <a class="logo" fxShow="false" fxShow.gt-xs="true" href="#"><img src="assets/img/logo.png"></a> -->
 <!--            <img mat-card-image src="assets/img/logo_ev.png" style="width: 104px;">
  -->
-      <span style="color: #ff6d00">Electric Nodes <sup style="font-style: oblique;">dev-0.0.1</sup></span>
+      <span style="color: #ff6d00; cursor: pointer;" (click)="routeHome()" >Electric Nodes <sup style="font-style: oblique;">dev-0.0.1</sup></span>
       <mat-nav-list class="navigation-list" fxLayout="row" fxShow="false" fxShow.gt-xs="true">
           <a mat-list-item href="#about">About</a>
 <!--           <a mat-list-item href="#portfolio">Portfolio</a>
@@ -32,19 +32,9 @@
       </mat-sidenav>
 
       <mat-sidenav-content nglp-scroll (onScroll)="detectScroll($event)">
-
-      <app-heading></app-heading>
           <router-outlet></router-outlet>
 
-
-      <app-about></app-about>
-
-
-
-<!--       <app-portfolio></app-portfolio>
- -->      <app-pricing></app-pricing>
-<!--       <app-blog></app-blog>
- -->      <app-contact></app-contact>
+          
 
       
 

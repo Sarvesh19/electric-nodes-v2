@@ -12,6 +12,7 @@ import { SE } from './directives/scroll.directive';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ export class AppComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(@Inject(DOCUMENT) document, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog) {
+  constructor(@Inject(DOCUMENT) document, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog, private router :Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -67,6 +68,11 @@ export class AppComponent implements OnDestroy {
     this.contactFabButton = document.getElementById('contact-fab-button');
     this.contactFabButton.style.display = "none";
     
+  }
+
+  routeHome(){
+        this.router.navigate(['']);
+
   }
 
   setToggleOff(){
