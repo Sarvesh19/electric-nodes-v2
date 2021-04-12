@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {IntroComponent} from './intro/intro.component';
 import { SignupComponent } from './signup/signup.component';
+import {ChatComponent}        from './chat/chat.component';
 
 
 
@@ -16,6 +17,8 @@ const routes: Routes = [
 
       { path: '', component: IntroComponent },
       { path: 'signup', component: SignupComponent },
+       {path: 'login', component: LoginComponent},
+      {path: 'chat', component: ChatComponent},
    // children: [
    //    { path: 'create-party', component: CreatePartyComponent },
    //    { path: 'search-party', component: RequestPartyComponent }

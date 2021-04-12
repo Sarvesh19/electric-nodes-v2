@@ -18,7 +18,15 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IntroComponent } from './intro/intro.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { ChatstreamComponent } from './chatstream/chatstream.component';
+import { UserComponent } from './user/user.component';
+import { ChatComponent } from './chat/chat.component';
+import {NgxWebstorageModule}  from 'ngx-webstorage';
+import {AppService}           from './service/app.service';
+import {XHRHandler}           from './service/xhrhandler.service';
+import {AppDataService}       from './service/appdata.service';
+import {WebSocketService}     from './service/websocket.service';
+import {HttpClientModule}     from '@angular/common/http';
 
 //ng g component intro/intro --module=app.module.ts
 // lsof -i:3000
@@ -36,7 +44,10 @@ import { SignupComponent } from './signup/signup.component';
     ContactDialogComponent,
     LoginComponent,
     IntroComponent,
-    SignupComponent
+    SignupComponent,
+    ChatstreamComponent,
+    UserComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +56,13 @@ import { SignupComponent } from './signup/signup.component';
     FlexLayoutModule,
     DirectivesModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
+        NgxWebstorageModule.forRoot(),
+
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AppService, XHRHandler, AppDataService, WebSocketService],
   entryComponents: [ ContactDialogComponent ],
   bootstrap: [AppComponent]
 })
