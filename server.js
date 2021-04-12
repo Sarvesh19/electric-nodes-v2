@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const { Server } = require('ws');
 
 const app = express();
 
@@ -16,15 +15,3 @@ res.sendFile(path.join(__dirname+'/dist/electric-nodes-v2/index.html'));
 app.listen(process.env.PORT || 8080);
 
 
-const wss = new Server({ app });
-
-wss.on('connection', (ws) => {
-  console.log('Client connected');
-  ws.on('close', () => console.log('Client disconnected'));
-});
-
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
-}, 1000);
