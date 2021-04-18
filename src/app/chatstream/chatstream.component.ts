@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,DoCheck,Injectable } from '@angular/core';
 import {Message}              from '../data/message';
 import {AppDataService}       from '../service/appdata.service';
 import {WebSocketService}     from '../service/websocket.service';
+
+const WEBSOCKET_URL = 'ws://electricnodes-env-2.eba-ucms2ear.ap-south-1.elasticbeanstalk.com/websocket';
+//const WEBSOCKET_URL = 'ws://localhost:5000/websocket';
+
 @Component({
   selector: 'app-chatstream',
   templateUrl: './chatstream.component.html',
   styleUrls: ['./chatstream.component.css']
 })
-export class ChatstreamComponent implements OnInit {
+
+
+export class ChatstreamComponent implements OnInit  {
 
 
   
@@ -46,6 +52,8 @@ export class ChatstreamComponent implements OnInit {
     let msg = this.message;
     if (msg == '' || msg == undefined) return;
 
+    
+
     let message: Message = {
       type: 'MESSAGE',
       from: this.appDataService.userId,
@@ -57,6 +65,19 @@ export class ChatstreamComponent implements OnInit {
   }
 
   sendTypeIndicator() {
+//   	if (!this.isOpen()){
+// this.websocket.onclose = function(e) {
+//     console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
+//     setTimeout(function() {
+      
+//     }, 1000);
+//   };
+//   this.connect();
+
+		    
+
+// 		console.info("Reconnecting Successful..");
+// 	}
     let message: Message = {
       type: 'TYPING',
       from: this.appDataService.userId,
@@ -79,5 +100,24 @@ export class ChatstreamComponent implements OnInit {
       this.showTypingIndicator = false;
     }
   }
+
+    
+
+     isOpen() { return this.websocket.readyState === this.websocket.OPEN }
+
+
+     connect() {
+  		this.websocket = new WebSocket(WEBSOCKET_URL);
+  		this.websocket.onopen = function() {
+    	// subscribe to some channels
+    //	this.websocket.send(JSON.stringify({
+        //.... some message the I must send when I connect ....
+    //}));
+  };
+}
+
+
+
+
 
 }

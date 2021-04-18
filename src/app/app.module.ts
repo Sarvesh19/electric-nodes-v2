@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DirectivesModule } from './directives/directives.module';
 import { Material2Module } from './material2.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -31,6 +32,7 @@ import {HttpClientModule}     from '@angular/common/http';
 //ng g component intro/intro --module=app.module.ts
 // lsof -i:3000
 //kill -9 "PID"
+//https://toolbox.googleapps.com/apps/dig/#CNAME/
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import {HttpClientModule}     from '@angular/common/http';
     SignupComponent,
     ChatstreamComponent,
     UserComponent,
-    ChatComponent
+    ChatComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import {HttpClientModule}     from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
         NgxWebstorageModule.forRoot(),
 
     AppRoutingModule

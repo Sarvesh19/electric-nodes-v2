@@ -65,14 +65,5 @@ export class UserComponent implements OnInit {
     user.isOnline = isOnline;
   }
 
-  @HostListener('window:beforeunload')
-  close() {
-    let message: Message = {
-      type: 'LEFT',
-      from: this.appDataService.userId,
-      fromUserName: this.appDataService.userName,
-      message: ''
-    }
-    this.websocket.send(JSON.stringify(message));
-  }
+  
 }
