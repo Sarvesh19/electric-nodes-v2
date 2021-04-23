@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
               private appService: AppService,
               private appDataService: AppDataService) { }
   ngOnInit(): void {
+  	this.doLogin();
   }
 
   routeHome(){
