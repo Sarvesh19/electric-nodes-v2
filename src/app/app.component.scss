@@ -210,5 +210,20 @@ body {
   }
 }
 
+#cc-window .cc-compliance .cc-btn.cc-dismiss {
+            position: absolute;
+            top: -15px;
+            right: 15px;
+            text-align: right;
+            margin-right: 20px;
+            background-color: initial !important;
+            border: 0;
+            text-decoration: none;
+        }
+/* filling the gap */
+#cc-window .cc-save {
+  width:100%!important;
+}
+
 
 /* -------------------  LPCONTENT ---------------------------  */

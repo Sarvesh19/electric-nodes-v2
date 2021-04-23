@@ -10,15 +10,16 @@ import {ChatComponent}        from './chat/chat.component';
 
 const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
+  { path: 'intro', component: IntroComponent },
+      { path: 'signup', component: SignupComponent },
+      {path: 'chat', component: ChatComponent},
 
     // home route protected by auth guard
-    
+    { path: '**', redirectTo: 'intro', pathMatch: 'full' },
+
      
 
-      { path: '', component: IntroComponent },
-      { path: 'signup', component: SignupComponent },
-       {path: 'login', component: LoginComponent},
-      {path: 'chat', component: ChatComponent},
+      
    // children: [
    //    { path: 'create-party', component: CreatePartyComponent },
    //    { path: 'search-party', component: RequestPartyComponent }
@@ -27,14 +28,15 @@ const routes: Routes = [
 
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'intro' }
 
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [    RouterModule.forRoot(routes, { useHash: true })
+],
   exports: [RouterModule]
 })
 export class AppRoutingModule{ }

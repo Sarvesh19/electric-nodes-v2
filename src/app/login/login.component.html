@@ -1,13 +1,16 @@
-<i class="fas fa-chevron-left" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeHome()"></i>
+
 
 <!-- Material form register Mobile -->
 
 <mdb-card fxShow="true" fxShow.gt-xs="false">
 
+	<i class="fas fa-chevron-left" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeHome()"></i>
+
 <!--   <mdb-card-header class="info-color white-text text-center py-4">
  -->    <h5 style="margin-top: 10px; text-align: center;">
       <strong>Sign In</strong>
     </h5>
+    Sarvesh
   <!-- </mdb-card-header> -->
 
   <!--Card content-->
@@ -40,7 +43,7 @@
       <mdb-checkbox>Subscribe to our newsletter</mdb-checkbox>
 
       <!-- Sign up button -->
-      <button mdbBtn color="info" [outline]="true" [rounded]="true" [block]="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+      <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
         type="submit">Sign in</button>
 
       <!-- Social register -->
@@ -76,10 +79,11 @@
 
 <!--  Desktop
  --> 
-<mdb-card fxShow="false" fxShow.gt-xs="true" style="margin: 5% 33%;">
+ <i class="fas fa-chevron-left" fxShow="false" fxShow.gt-xs="true" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeHome()"></i>
+<mdb-card fxShow="false" fxShow.gt-xs="true" style="margin: 2% 33%;">
 
 <!--   <mdb-card-header class="info-color white-text text-center py-4">
- -->    <h5 style="margin-top: 10px; text-align: center;">
+ -->    <h5 style="margin-top: 28px; text-align: center;">
       <strong>Sign In</strong>
     </h5>
   <!-- </mdb-card-header> -->
@@ -114,7 +118,7 @@
       <mdb-checkbox>Subscribe to our newsletter</mdb-checkbox>
 
       <!-- Sign up button -->
-      <button mdbBtn color="info" [outline]="true" [rounded]="true" [block]="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+     <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
         type="submit">Sign in</button>
 
       <!-- Social register -->

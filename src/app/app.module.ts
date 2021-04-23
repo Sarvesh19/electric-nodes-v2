@@ -28,6 +28,24 @@ import {XHRHandler}           from './service/xhrhandler.service';
 import {AppDataService}       from './service/appdata.service';
 import {WebSocketService}     from './service/websocket.service';
 import {HttpClientModule}     from '@angular/common/http';
+// import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
+import { environment } from './../environments/environment';
+
+// const cookieConfig:NgcCookieConsentConfig = {
+//   cookie: {
+//     domain: environment.cookieDomain  // or 'your.domain.com' 
+//   },
+//   palette: {
+//     popup: {
+//       background: '#000'
+//     },
+//     button: {
+//       background: '#f1d600'
+//     }
+//   },
+//   theme: 'edgeless',
+//   type: 'opt-out'
+// };
 
 //ng g component intro/intro --module=app.module.ts
 // lsof -i:3000
@@ -64,6 +82,7 @@ import {HttpClientModule}     from '@angular/common/http';
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
         NgxWebstorageModule.forRoot(),
+        // NgcCookieConsentModule.forRoot(cookieConfig),
 
     AppRoutingModule
   ],

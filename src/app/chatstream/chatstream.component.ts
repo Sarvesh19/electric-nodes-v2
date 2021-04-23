@@ -3,7 +3,7 @@ import {Message}              from '../data/message';
 import {AppDataService}       from '../service/appdata.service';
 import {WebSocketService}     from '../service/websocket.service';
 
-const WEBSOCKET_URL = 'ws://electricnodes-env-2.eba-ucms2ear.ap-south-1.elasticbeanstalk.com/websocket';
+//const WEBSOCKET_URL = 'ws://electricnodes-env-2.eba-ucms2ear.ap-south-1.elasticbeanstalk.com/websocket';
 //const WEBSOCKET_URL = 'ws://localhost:5000/websocket';
 
 @Component({
@@ -107,7 +107,7 @@ export class ChatstreamComponent implements OnInit  {
 
 
      connect() {
-  		this.websocket = new WebSocket(WEBSOCKET_URL);
+  		//this.websocket = new WebSocket(WEBSOCKET_URL);
   		this.websocket.onopen = function() {
     	// subscribe to some channels
     //	this.websocket.send(JSON.stringify({

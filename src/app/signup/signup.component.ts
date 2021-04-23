@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   }
 
   routeHome(){
-        this.router.navigate(['']);
+        this.router.navigate(['intro']);
 
   }
 

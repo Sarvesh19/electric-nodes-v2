@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   routeHome(){
-        this.router.navigate(['']);
+        this.router.navigate(['intro']);
 
   }
 
