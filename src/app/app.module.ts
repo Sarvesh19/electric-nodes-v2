@@ -30,6 +30,7 @@ import {WebSocketService}     from './service/websocket.service';
 import {HttpClientModule}     from '@angular/common/http';
 // import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 import { environment } from './../environments/environment';
+import  {AuthGuard} from './auth-service';
 
 // const cookieConfig:NgcCookieConsentConfig = {
 //   cookie: {
@@ -47,7 +48,7 @@ import { environment } from './../environments/environment';
 //   type: 'opt-out'
 // };
 
-//ng g component intro/intro --module=app.module.ts
+//ng g component home/home --module=app.module.ts
 // lsof -i:3000
 //kill -9 "PID"
 //https://toolbox.googleapps.com/apps/dig/#CNAME/
@@ -86,7 +87,7 @@ import { environment } from './../environments/environment';
 
     AppRoutingModule
   ],
-  providers: [AppService, XHRHandler, AppDataService, WebSocketService],
+  providers: [AppService, XHRHandler, AppDataService, WebSocketService,AuthGuard],
   entryComponents: [ ContactDialogComponent ],
   bootstrap: [AppComponent]
 })

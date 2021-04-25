@@ -6,6 +6,9 @@
 
 	<i class="fas fa-chevron-left" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeHome()"></i>
 
+	<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+
 <!--   <mdb-card-header class="info-color white-text text-center py-4">
  -->    <h5 style="margin-top: 10px; text-align: center;">
       <strong>Sign In</strong>
@@ -16,20 +19,19 @@
   <mdb-card-body class="px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form class="text-center" style="color: #757575;" [formGroup]="form" (ngSubmit)="submit($event)" required>
 
       
 
       <!-- E-mail -->
       <div class="md-form mt-0">
-        <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
+        <input type="email" id="materialRegisterFormEmail" formControlName="username" class="form-control" placeholder="E-mail" required>
         <label for="materialRegisterFormEmail">E-mail</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
-          mdbInput>
+        <input type="password" id="materialRegisterFormPassword" formControlName="password" class="form-control" placeholder="Password">
         <label for="materialRegisterFormPassword">Password</label>
         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           At least 8 characters and 1 digit
@@ -79,7 +81,11 @@
 <!--  Desktop
  --> 
  <i class="fas fa-chevron-left" fxShow="false" fxShow.gt-xs="true" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeHome()"></i>
+
+
 <mdb-card fxShow="false" fxShow.gt-xs="true" style="margin: 2% 33%;">
+ 	<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
 
 <!--   <mdb-card-header class="info-color white-text text-center py-4">
  -->    <h5 style="margin-top: 28px; text-align: center;">
@@ -91,20 +97,19 @@
   <mdb-card-body class="px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form class="text-center" style="color: #757575;" [formGroup]="form" (ngSubmit)="submit($event)" required>
 
       
 
       <!-- E-mail -->
       <div class="md-form mt-0">
-        <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
+        <input type="email" id="materialRegisterFormEmail1" formControlName="username" class="form-control" placeholder="E-mail" required>
         <label for="materialRegisterFormEmail">E-mail</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
-          mdbInput>
+        <input type="password" id="materialRegisterFormPassword1" formControlName="password" class="form-control" placeholder="Password">
         <label for="materialRegisterFormPassword">Password</label>
         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           At least 8 characters and 1 digit

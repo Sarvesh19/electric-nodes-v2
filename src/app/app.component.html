@@ -5,7 +5,7 @@
  -->
       <span style="color: #673ab7; cursor: pointer;" (click)="routeHome()" >Electric Nodes <sup style="font-style: oblique;">dev-0.0.1</sup></span>
       <mat-nav-list class="navigation-list" fxLayout="row" fxShow="false" fxShow.gt-xs="true">
-          <a mat-list-item href="#about">About</a>
+          <a mat-list-item href="#about" >About</a>
 <!--           <a mat-list-item href="#portfolio">Portfolio</a>
  -->          <a mat-list-item href="#pricing">Pricing</a>
           <a mat-list-item (click)="routeSignup()">Sign Up</a>
@@ -23,7 +23,7 @@
                    [fixedInViewport]="mobileQuery.matches" (opened)="setToggleOn()" (closed)="setToggleOff()">
         <mat-nav-list>
           <a id="mobilelogo" class="logo" fxShow="true" fxShow.gt-xs="false" href="#"><img src="assets/img/logo.png"></a>
-          <a mat-list-item href="#about" (click)="snav.toggle()">About</a>
+          <a mat-list-item href="#about" style="margin-top: 40px;" (click)="snav.toggle()">About</a>
 <!--           <a mat-list-item href="#portfolio" (click)="snav.toggle()">Portfolio</a>
  -->          <a mat-list-item href="#pricing" (click)="snav.toggle()">Pricing</a>
           <a mat-list-item  (click)="routeSignup()">Sign Up</a>
