@@ -21,7 +21,11 @@ const routes: Routes = [
     // home route protected by auth guard
     { path: '**', redirectTo: 'intro', pathMatch: 'full' },
 
-     
+     {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
 
       
    // children: [

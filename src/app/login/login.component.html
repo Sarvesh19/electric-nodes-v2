@@ -45,7 +45,13 @@
 
       <!-- Sign up button -->
       <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
-        type="submit">Sign in</button>
+        type="submit">
+<span *ngIf="loading">
+<span  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+  </span>
+    <span *ngIf="!loading">Sign in</span>
+    </button>
 
       <!-- Social register -->
       <p>or sign up with:</p>
@@ -95,7 +101,9 @@
 
   <!--Card content-->
   <mdb-card-body class="px-lg-5 pt-0">
-
+<!-- <button class="btn btn-primary" type="button" disabled>
+  
+</button> -->
     <!-- Form -->
     <form class="text-center" style="color: #757575;" [formGroup]="form" (ngSubmit)="submit($event)" required>
 
@@ -123,7 +131,13 @@
 
       <!-- Sign up button -->
      <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
-        type="submit">Sign in</button>
+        type="submit">
+        <span *ngIf="loading">
+<span  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+  </span>
+    <span *ngIf="!loading">Sign in</span>
+</button>
 
       <!-- Social register -->
       <p>or sign up with:</p>

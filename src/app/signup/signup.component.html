@@ -67,7 +67,12 @@
 
       <!-- Sign up button -->
       <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
-        type="submit">Sign up</button>
+        type="submit">
+        <span *ngIf="loading">
+<span  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+  </span>
+    <span *ngIf="!loading">Sign up</span></button>
 
       <!-- Social register -->
       <p>or sign up with:</p>
@@ -168,7 +173,13 @@
 
       <!-- Sign up button -->
       <button mat-raised-button color="info" color="primary" style="min-width: -webkit-fill-available;"
-        type="submit">Sign up</button>
+        type="submit">
+<span *ngIf="loading">
+<span  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+  </span>
+    <span *ngIf="!loading">Sign up</span>
+    </button>
 
       <!-- Social register -->
       <p>or sign up with:</p>
