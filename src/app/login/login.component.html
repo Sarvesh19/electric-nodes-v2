@@ -37,7 +37,25 @@
           At least 8 characters and 1 digit
         </small>
       </div>
+ <div *ngIf="form.invalid && (form.dirty || form.touched)"
+    class="alert alert-danger">
 
+  <div>
+    Username & Password are required.
+  </div>
+  
+
+</div>
+
+<div *ngIf="notvaliduser"
+    class="alert alert-danger">
+
+  <div>
+    Username & Password not valid.
+  </div>
+  
+
+</div>
      
 
       <!-- Newsletter -->
@@ -123,6 +141,25 @@
           At least 8 characters and 1 digit
         </small>
       </div>
+
+      <div *ngIf="form.invalid && (form.dirty || form.touched)"
+    class="alert alert-danger">
+
+  <div>
+    Username & Password are required.
+  </div>
+  
+
+</div>
+<div *ngIf="notvaliduser"
+    class="alert alert-danger">
+
+  <div>
+    Username & Password not valid.
+  </div>
+  
+
+</div>
 
      
 

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
  userName: string = '';
   showErrorMsg: boolean = false;
   loading : boolean = false;
+  notvaliduser :boolean = false;
 
   constructor(private router: Router,
               private appService: AppService,
@@ -43,7 +44,7 @@ form: FormGroup = new FormGroup({
     submit(event: any) {
   //  this.wrongPassword = false;
     //this.mandatory = false;
-    this.loading = true;
+    
     let user = { username: this.form.value.username, password: this.form.value.password };
 
    // this.conversionEncryptPassWord = CryptoJS.AES.encrypt("sarvesh", user.password.trim()).toString();  
@@ -51,10 +52,15 @@ form: FormGroup = new FormGroup({
     let userencrypt =  { username: this.form.value.username, password: btoa(user.password.trim()) };
 
     if (this.form.valid) {
+    	this.loading = true;
       this.userLoginService.getUser(userencrypt).subscribe(data => {
       //this.trendTwitter = data.status;
       //this.isSent = true;
          this.loading = false;
+
+         if(data === null){
+         	this.notvaliduser = true;
+         }
 
           //sessionStorage.setItem('username',data.email);
           let tokenStr= 'Bearer '+'tocken1';
