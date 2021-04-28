@@ -6,6 +6,9 @@ import { SignupComponent } from './signup/signup.component';
 import {ChatComponent}        from './chat/chat.component';
 import {HomeComponent}        from './home/home.component';
 import {AuthGuard} from './auth-service';
+import {HeadingComponent}  from './heading/heading.component';
+import { ProfileComponent } from './profile/profile.component'
+import {UserHomeComponent} from './user-home/user-home.component'
 
 
 
@@ -15,17 +18,24 @@ const routes: Routes = [
   { path: 'intro', component: IntroComponent },
       { path: 'signup', component: SignupComponent },
       {path: 'chat', component: ChatComponent},
+      {path: 'header', component: HeadingComponent},
+       
+      
        {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+
+    //children: [
+      {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+      {path: 'home-user', component: UserHomeComponent},
+       
+   // ]
+    // },
+        
       
 
     // home route protected by auth guard
     { path: '**', redirectTo: 'intro', pathMatch: 'full' },
 
-     {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+    
 
       
    // children: [

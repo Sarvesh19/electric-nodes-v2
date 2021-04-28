@@ -1,10 +1,3 @@
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
 
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, Inject,OnInit } from '@angular/core';
@@ -28,13 +21,7 @@ import { Subscription } from "rxjs";
 })
 export class AppComponent implements OnDestroy,OnInit {
 
-   //keep refs to subscriptions to be able to unsubscribe later
-  private popupOpenSubscription: any;
-  private popupCloseSubscription: any;
-  private initializeSubscription: any;
-  private statusChangeSubscription: any;
-  private revokeChoiceSubscription: any;
-  private noCookieLawSubscription: any;
+   
 
   contactFabButton: any;
   bodyelement: any;

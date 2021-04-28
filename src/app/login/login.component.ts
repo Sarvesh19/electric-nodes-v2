@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
               private appService: AppService,
-              private appDataService: AppDataService,private userLoginService : UserLoginService) { }
+              private appDataService: AppDataService,private userLoginService : UserLoginService) { 
+
+
+
+  }
   ngOnInit(): void {
   	this.doLogin();
   }
@@ -53,6 +57,7 @@ form: FormGroup = new FormGroup({
 
     if (this.form.valid) {
     	this.loading = true;
+    	this.notvaliduser = false;
       this.userLoginService.getUser(userencrypt).subscribe(data => {
       //this.trendTwitter = data.status;
       //this.isSent = true;
@@ -69,7 +74,7 @@ form: FormGroup = new FormGroup({
 
              localStorage.setItem('currentUser', JSON.stringify(data));
 
-      this.router.navigate(['home']); 
+      this.router.navigateByUrl('/home'); 
 
       console.info(data);
       

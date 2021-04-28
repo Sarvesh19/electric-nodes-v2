@@ -6,7 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DirectivesModule } from './directives/directives.module';
 import { Material2Module } from './material2.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+ 
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
@@ -31,6 +32,11 @@ import {HttpClientModule}     from '@angular/common/http';
 // import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 import { environment } from './../environments/environment';
 import  {AuthGuard} from './auth-service';
+import {SidebarService} from './service/sidebar.service';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 // const cookieConfig:NgcCookieConsentConfig = {
 //   cookie: {
@@ -53,6 +59,27 @@ import  {AuthGuard} from './auth-service';
 //kill -9 "PID"
 //https://toolbox.googleapps.com/apps/dig/#CNAME/
 
+
+// this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+//     this.router.navigate(['Your actualComponent']);
+// }); 
+
+
+
+// @HostListener('document:click', ['$event']) onDocumentClick(event) {
+
+//     if (event.target.matches('.request')) {
+//       // alert('click to editor div');
+//       this.requestBtnLbl = 'Sent';
+//       setTimeout(() => {
+//         this.requestBtnLbl = 'Request';
+//       }, 5000);
+
+
+
+//     }
+//   }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +96,9 @@ import  {AuthGuard} from './auth-service';
     ChatstreamComponent,
     UserComponent,
     ChatComponent,
+    HomeComponent,
+    ProfileComponent,
+    UserHomeComponent
 
 
   ],
@@ -81,13 +111,15 @@ import  {AuthGuard} from './auth-service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule, 
     MDBBootstrapModule.forRoot(),
         NgxWebstorageModule.forRoot(),
         // NgcCookieConsentModule.forRoot(cookieConfig),
 
     AppRoutingModule
   ],
-  providers: [AppService, XHRHandler, AppDataService, WebSocketService,AuthGuard],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [AppService, XHRHandler, AppDataService, WebSocketService,AuthGuard, SidebarService],
   entryComponents: [ ContactDialogComponent ],
   bootstrap: [AppComponent]
 })
