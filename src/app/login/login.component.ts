@@ -68,7 +68,7 @@ form: FormGroup = new FormGroup({
          if(data === null){
          	this.notvaliduser = true;
          }
-         this.isSubmitted = false;
+         this.isSubmitted = false; 
 
           //sessionStorage.setItem('username',data.email);
           let tokenStr= 'Bearer '+'tocken1';

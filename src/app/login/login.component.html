@@ -37,7 +37,7 @@
           At least 8 characters and 1 digit
         </small>
       </div>
- <div *ngIf="form.invalid && (form.dirty || form.touched)"
+ <div *ngIf="form.invalid && isSubmitted"
     class="alert alert-danger">
  
   <div>
