@@ -53,6 +53,11 @@ this.mobileQuery = media.matchMedia('(max-width: 600px)');
 
   ngOnInit(): void {
 
+  	if(localStorage.getItem('currentUser')){
+  			this.router.navigate(['home']);
+
+  	}
+
   	console.info("ccw");
   }
 

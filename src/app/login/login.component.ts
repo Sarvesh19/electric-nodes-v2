@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   showErrorMsg: boolean = false;
   loading : boolean = false;
   notvaliduser :boolean = false;
+  isSubmitted :boolean =false;
 
   constructor(private router: Router,
               private appService: AppService,
@@ -48,6 +49,7 @@ form: FormGroup = new FormGroup({
     submit(event: any) {
   //  this.wrongPassword = false;
     //this.mandatory = false;
+    this.isSubmitted = true;
     
     let user = { username: this.form.value.username, password: this.form.value.password };
 
@@ -66,6 +68,7 @@ form: FormGroup = new FormGroup({
          if(data === null){
          	this.notvaliduser = true;
          }
+         this.isSubmitted = false;
 
           //sessionStorage.setItem('username',data.email);
           let tokenStr= 'Bearer '+'tocken1';

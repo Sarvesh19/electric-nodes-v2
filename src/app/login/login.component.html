@@ -142,7 +142,7 @@
         </small>
       </div>
 
-      <div *ngIf="form.invalid && (form.dirty || form.touched)"
+      <div *ngIf="form.invalid && isSubmitted"
     class="alert alert-danger">
 
   <div>
