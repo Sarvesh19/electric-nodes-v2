@@ -55,6 +55,11 @@ form: FormGroup = new FormGroup({
   //  this.wrongPassword = false;
     //this.mandatory = false;
     this.isSubmitted = true;
+
+    localStorage.removeItem('token');
+     localStorage.removeItem('username');
+
+     localStorage.removeItem('currentUser');
     
     let user = { username: this.form.value.username, password: this.form.value.password };
 
