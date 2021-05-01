@@ -59,6 +59,11 @@ export class SignupComponent implements OnInit {
 
   registerFunc(event : any){
   		//this.notFilled = false;
+
+  		 localStorage.removeItem('token');
+     localStorage.removeItem('username');
+
+     localStorage.removeItem('currentUser');
   		
   	    //this.register.value.password = CryptoJS.AES.encrypt("sarvesh", this.register.value.password.trim()).toString();  
  	this.submitted  = true;
