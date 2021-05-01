@@ -1,0 +1,30 @@
+<!--Card content-->
+
+<i class="fas fa-chevron-left" style="font-size: 35px;cursor: pointer;margin-top: 7px;" (click)="routeSignUp()"></i>
+  <mdb-card style="margin-top: 50px">
+  		<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <mdb-card-body class="px-lg-5 pt-0">
+
+
+      
+
+      <!-- E-mail -->
+      <div class="md-form mt-0">
+      	        <label for="materialRegisterFormEmail">Thank you for Successful Sign up 
+      	        	Please Enter verification Code
+      	        </label>
+
+    <input   [(ngModel)]="code" >
+    <button mat-raised-button color="primary" (click)="verify()">Verify</button>
+      </div>
+
+          
+
+<span *ngIf="notValidConfirmCode"> Not Valid Code Please Try Again</span>
+     
+        
+
+  </mdb-card-body>
+
+</mdb-card>

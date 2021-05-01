@@ -9,6 +9,7 @@ import {AuthGuard} from './auth-service';
 import {HeadingComponent}  from './heading/heading.component';
 import { ProfileComponent } from './profile/profile.component'
 import {UserHomeComponent} from './user-home/user-home.component'
+import {EmailconfirmComponent} from './emailconfirm/emailconfirm.component'
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
     //children: [
       {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
       {path: 'home-user', component: UserHomeComponent},
+      {path: 'emailconfirmation', component: EmailconfirmComponent},
        
    // ]
     // },

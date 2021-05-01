@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
 
 	loading :boolean = false;
 	submitted :boolean = false;
+	userExist :boolean = false;
 
   constructor(private router : Router,private userLoginService : UserLoginService,private formBuilder: FormBuilder) { }
 
@@ -66,17 +67,24 @@ export class SignupComponent implements OnInit {
   	    	return ;
   	    }
 		this.loading = true;
+		this.userExist = false;
   	    this.register.value.password = btoa(this.register.value.password.trim());  
 
   		this.userLoginService.registerUser(this.register.value).subscribe(data => {
 			//this.trendTwitter = data.status;
 			//this.isSent = true;
-			localStorage.setItem('username',data.email);
-          let tokenStr= 'Bearer '+'token1';
-          localStorage.setItem('token', tokenStr);
-			       localStorage.setItem('currentUser', JSON.stringify(data));
-			this.loading = false;
-			this.router.navigate(['home']);
+			if(data == null){
+				this.userExist = true;
+			} else {
+					 localStorage.setItem('confirmEmail',data.email);
+   //        let tokenStr= 'Bearer '+'token1';
+   //        localStorage.setItem('token', tokenStr);
+			//        localStorage.setItem('currentUser', JSON.stringify(data));
+			this.router.navigate(['emailconfirmation']);
+			}
+
+					this.loading = false;
+
 
 			console.info(data);
 			

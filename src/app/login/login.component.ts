@@ -46,6 +46,11 @@ form: FormGroup = new FormGroup({
         });
     }
 
+    routeSignUp(){
+    	        this.router.navigate(['signup']);
+
+    }
+
     submit(event: any) {
   //  this.wrongPassword = false;
     //this.mandatory = false;
@@ -71,7 +76,7 @@ form: FormGroup = new FormGroup({
          this.isSubmitted = false; 
 
           //sessionStorage.setItem('username',data.email);
-          let tokenStr= 'Bearer '+'tocken1';
+          let tokenStr= 'Bearer '+data.token;
           localStorage.setItem('token', tokenStr);
                     localStorage.setItem('username',data.email);
 

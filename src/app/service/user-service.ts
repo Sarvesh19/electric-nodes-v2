@@ -27,10 +27,20 @@ private baseUri = "https://electric-nodes-backend.herokuapp.com/";
 
   getUser(user: any): Observable<any> {
     return this.http.post(this.baseUri + 'login' , user);
-  }
+  } 
   
   registerUser(userDetail: any): Observable<any> {
     return this.http.post(this.baseUri + 'signup', userDetail);
+
+  }
+
+  confirmUser(userDetail: any): Observable<any> {
+    return this.http.post(this.baseUri + 'confirmmail', userDetail);
+
+  }
+
+  getProfile(): Observable<any> {
+    return this.http.get(this.baseUri + 'profile');
 
   }
 

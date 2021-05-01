@@ -94,6 +94,7 @@
   Loading...
   </span>
     <span *ngIf="!loading">Sign up</span></button>
+    <span *ngIf="userExist" class="alert alert-danger">User Already exist.. try login</span>
 
       <!-- Social register -->
       <p>or sign up with:</p>
@@ -222,6 +223,8 @@
   </span>
     <span *ngIf="!loading">Sign up</span>
     </button>
+
+    <span *ngIf="userExist" class="alert alert-danger">User Already exist.. try login</span>
 
       <!-- Social register -->
       <p>or sign up with:</p>

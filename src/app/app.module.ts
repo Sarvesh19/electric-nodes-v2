@@ -7,7 +7,7 @@ import { DirectivesModule } from './directives/directives.module';
 import { Material2Module } from './material2.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
- 
+
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
@@ -28,7 +28,7 @@ import {AppService}           from './service/app.service';
 import {XHRHandler}           from './service/xhrhandler.service';
 import {AppDataService}       from './service/appdata.service';
 import {WebSocketService}     from './service/websocket.service';
-import {HttpClientModule}     from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS,HttpClientJsonpModule}     from '@angular/common/http';
 // import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 import { environment } from './../environments/environment';
 import  {AuthGuard} from './auth-service';
@@ -37,6 +37,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { EmailconfirmComponent } from './emailconfirm/emailconfirm.component';
+import { AuthHtppInterceptorService } from './auth-intercepter.service';
 
 // const cookieConfig:NgcCookieConsentConfig = {
 //   cookie: {
@@ -98,7 +100,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
     ChatComponent,
     HomeComponent,
     ProfileComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    EmailconfirmComponent
 
 
   ],
@@ -119,7 +122,12 @@ import { UserHomeComponent } from './user-home/user-home.component';
     AppRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AppService, XHRHandler, AppDataService, WebSocketService,AuthGuard, SidebarService],
+  providers: [AppService, XHRHandler, AppDataService, WebSocketService,AuthGuard, SidebarService,
+{
+    provide: HTTP_INTERCEPTORS, useClass: AuthHtppInterceptorService, multi: true
+  }
+
+  ],
   entryComponents: [ ContactDialogComponent ],
   bootstrap: [AppComponent]
 })

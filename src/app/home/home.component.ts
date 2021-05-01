@@ -8,6 +8,7 @@ import { SE } from '../directives/scroll.directive';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ContactDialogComponent } from '../contact-dialog/contact-dialog.component';
 import { DOCUMENT } from '@angular/common';
+import { UserLoginService } from '../service/user-service';
 
 
 @Component({
@@ -34,7 +35,7 @@ username : any;
 messageReceived: any;
         private subscriptionName: any; 
     constructor(private sidebarService: SidebarService,@Inject(DOCUMENT) document, changeDetectorRef: ChangeDetectorRef,
-   media: MediaMatcher, public dialog: MatDialog, private router :Router) {
+   media: MediaMatcher, public dialog: MatDialog, private router :Router,private userLoginService : UserLoginService) {
 this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -53,6 +54,14 @@ this.mobileQuery = media.matchMedia('(max-width: 600px)');
   ngOnInit(): void {
   	this.username = localStorage.getItem('username');
   	console.info("ccw");
+
+  	      this.userLoginService.getProfile().subscribe(data => {
+  	      	console.info(data);
+  	      	this.username = data + ", "+ this.username;
+  	      })
+
+
+
   }
 
   public detectScroll(event: SE) {
@@ -94,6 +103,11 @@ this.mobileQuery = media.matchMedia('(max-width: 600px)');
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('confirmEmail');
+    localStorage.removeItem('username');
+	localStorage.removeItem('token');
+
+    
     this.router.navigate(['login']);
     
 
